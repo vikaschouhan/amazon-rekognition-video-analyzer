@@ -271,6 +271,7 @@ def deletestack(** kwargs):
     
     s3 = boto3.resource('s3')
     s3.Bucket(frame_s3_bucket_name).objects.delete()
+    s3.Bucket(frame_s3_bucket_name).delete()
 
     print("Attempting to DELETE '%s' stack using CloudFormation." % stack_name)
     start_t = time.time()
